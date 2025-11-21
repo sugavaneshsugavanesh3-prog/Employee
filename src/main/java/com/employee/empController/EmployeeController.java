@@ -17,12 +17,15 @@ import com.employee.GlobalExceptionHandler.ExperienceNotFoundException;
 import com.employee.GlobalExceptionHandler.NameNotFoundException;
 import com.employee.GlobalExceptionHandler.SalaryNotFoundException;
 import com.employee.empEntity.EmployeeEntity;
+import com.employee.empRepository.EmployeeRepository;
 import com.employee.empService.EmployeeService;
 
 @RestController
 public class EmployeeController {
 	@Autowired
 	EmployeeService es;
+	@Autowired
+	EmployeeRepository er;
 	@PostMapping(value="postData")
 	public String postData(@RequestBody EmployeeEntity e) {
 return es.postData(e);
